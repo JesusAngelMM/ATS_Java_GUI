@@ -3,6 +3,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class Ventana extends JFrame {
 
@@ -24,7 +25,8 @@ public class Ventana extends JFrame {
 
         JLabel etiqueta = new JLabel();  //Creamos una etiqueta
         etiqueta.setText("Hola");  //Establecemos el texto de la etiqueta
-        etiqueta.setBounds(10, 10, 40, 30);  //Modificamos ubicación
+        etiqueta.setHorizontalAlignment(SwingConstants.CENTER);  //Alineamos
+        etiqueta.setBounds(10, 10, 70, 30);  //Modificamos ubicación
         etiqueta.setForeground(Color.BLACK);
         etiqueta.setOpaque(true);  //Damos permiso de pintar la etiqueta
         etiqueta.setBackground(Color.WHITE);  //Pintamos
