@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -30,6 +31,7 @@ public class Ventana extends JFrame {
         etiqueta.setForeground(Color.BLACK);
         etiqueta.setOpaque(true);  //Damos permiso de pintar la etiqueta
         etiqueta.setBackground(Color.WHITE);  //Pintamos
+        etiqueta.setFont(new Font("Arial", Font.ITALIC, 20));   //Establecemos la fuente del texto
         panel.add(etiqueta);  //Agregamos la etiqueta al panel
     }
 }
