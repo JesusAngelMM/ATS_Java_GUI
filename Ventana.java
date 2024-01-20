@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -28,16 +29,19 @@ public class Ventana extends JFrame {
         JLabel etiqueta = new JLabel();  //Creamos una etiqueta
         etiqueta.setText("Mundial 2018");  //Establecemos el texto de la etiqueta
         etiqueta.setHorizontalAlignment(SwingConstants.CENTER);  //Alineamos
-        etiqueta.setBounds(85, 10, 300, 80);  //Modificamos ubicación
+        etiqueta.setBounds(150, 10, 150, 40);  //Modificamos ubicación
         etiqueta.setForeground(Color.WHITE);
         etiqueta.setOpaque(true);  //Damos permiso de pintar la etiqueta
         etiqueta.setBackground(Color.BLACK);  //Pintamos
         etiqueta.setFont(new Font("Arial", Font.ITALIC, 20));   //Establecemos la fuente del texto
+
         panel.add(etiqueta);  //Agregamos la etiqueta al panel
 
         //Etiqueta 2 - Etiqueta tipo imagen
-        JLabel etiquetaImg = new JLabel(new ImageIcon("imagen.jpg"));
-        etiquetaImg.setBounds(10, 100, 512, 640);
+        ImageIcon imagen = new ImageIcon("imagen.jpg");
+        JLabel etiquetaImg = new JLabel();
+        etiquetaImg.setBounds(90, 80, 300, 300);
+        etiquetaImg.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiquetaImg.getWidth(), etiquetaImg.getHeight(), Image.SCALE_SMOOTH)));
 
         panel.add(etiquetaImg);
 
