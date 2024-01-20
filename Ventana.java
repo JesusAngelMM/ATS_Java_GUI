@@ -18,14 +18,16 @@ public class Ventana extends JFrame {
     }
     private void iniciarComponentes(){
         JPanel panel = new JPanel();  //Creamos el panel
-        //panel.setBackground(Color.BLACK);
+        panel.setBackground(Color.BLACK);
         this.getContentPane().add(panel);  //Agregamos el panel
-        panel.setLayout(null);  //Desactivamos el diseño
+        panel.setLayout(null);  //Desactivamos el diseño por defecto
 
         JLabel etiqueta = new JLabel();  //Creamos una etiqueta
         etiqueta.setText("Hola");  //Establecemos el texto de la etiqueta
-        etiqueta.setBounds(10, 10, 50, 30);  //Modificamos ubicación
-
+        etiqueta.setBounds(10, 10, 40, 30);  //Modificamos ubicación
+        etiqueta.setForeground(Color.BLACK);
+        etiqueta.setOpaque(true);  //Damos permiso de pintar la etiqueta
+        etiqueta.setBackground(Color.WHITE);  //Pintamos
         panel.add(etiqueta);  //Agregamos la etiqueta al panel
     }
 }
