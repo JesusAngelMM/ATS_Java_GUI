@@ -63,6 +63,8 @@ public class Ventana extends JFrame {
         boton1.setBounds(100, 100, 100, 40);  // Tamaño y posición
         boton1.setEnabled(true);  // Habilitar o deshabilitar el botón
         boton1.setMnemonic('a');  // ALT + 'a' y funciona
+        boton1.setForeground(Color.BLUE);  //Establecemos el color de la letra
+        boton1.setFont(new Font("arial", Font.BOLD, 20));
         
         panel.add(boton1);  // Agregar al panel
     }
