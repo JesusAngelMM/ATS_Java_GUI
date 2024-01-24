@@ -2,13 +2,14 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
-
 import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 
 public class Ventana extends JFrame {
@@ -28,7 +29,8 @@ public class Ventana extends JFrame {
     private void iniciarComponentes(){
         colocarPaneles();
         //colocarEtiquetas();
-        colocarBotones();
+        //colocarBotones();
+        colocarRadioBotones();
         
     }
     private void colocarPaneles(){
@@ -90,5 +92,39 @@ public class Ventana extends JFrame {
         boton3.setBorder(BorderFactory.createLineBorder(Color.GREEN, 4,false));
 
         panel.add(boton3);
+    }
+    private void colocarRadioBotones(){
+        JRadioButton radio_Boton1 = new JRadioButton("Opcion 1", false);
+        radio_Boton1.setBounds(50, 100, 200, 50);
+        radio_Boton1.setEnabled(true);
+        radio_Boton1.setText("Programación");
+        radio_Boton1.setFont(new Font("Arial", 0, 20));
+        radio_Boton1.setBackground(Color.BLACK);
+        radio_Boton1.setForeground(Color.WHITE);
+        panel.add(radio_Boton1);
+
+        JRadioButton radio_Boton2 = new JRadioButton("Opcion 2", false);
+        radio_Boton2.setBounds(50, 150, 200, 50);
+        radio_Boton2.setEnabled(true);
+        radio_Boton2.setText("Matemáticas");
+        radio_Boton2.setFont(new Font("Arial", 0, 20));
+        radio_Boton2.setBackground(Color.BLACK);
+        radio_Boton2.setForeground(Color.WHITE);
+        panel.add(radio_Boton2);
+
+        JRadioButton radio_Boton3 = new JRadioButton("Opcion 2", false);
+        radio_Boton3.setBounds(50, 200, 200, 50);
+        radio_Boton3.setEnabled(true);
+        radio_Boton3.setText("Física");
+        radio_Boton3.setFont(new Font("Arial", 0, 20));
+        radio_Boton3.setBackground(Color.BLACK);
+        radio_Boton3.setForeground(Color.WHITE);
+        panel.add(radio_Boton3);
+
+        ButtonGroup grupo_Radio_Botones = new ButtonGroup();
+        grupo_Radio_Botones.add(radio_Boton1);
+        grupo_Radio_Botones.add(radio_Boton2);
+        grupo_Radio_Botones.add(radio_Boton3);
+
     }
 }
