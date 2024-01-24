@@ -57,6 +57,7 @@ public class Ventana extends JFrame {
         panel.add(etiquetaImg);
     }
     private void colocarBotones(){
+        //Boton 1 - Boton de texto
         JButton boton1 = new JButton();  // Crear un botón
     
         boton1.setText("Click");  // Establecer un texto al botón
@@ -64,8 +65,19 @@ public class Ventana extends JFrame {
         boton1.setEnabled(true);  // Habilitar o deshabilitar el botón
         boton1.setMnemonic('a');  // ALT + 'a' y funciona
         boton1.setForeground(Color.BLUE);  //Establecemos el color de la letra
-        boton1.setFont(new Font("arial", Font.BOLD, 20));
+        boton1.setFont(new Font("arial", Font.BOLD, 20));  //Modoficar la fuente
         
         panel.add(boton1);  // Agregar al panel
+
+        //Boton 2 - Boton de imagen
+        JButton boton2 = new JButton();
+
+        boton2.setBounds(100, 200, 100, 40);  //Tamaño y posición
+        //boton2.setOpaque(true);  //Para versiones que no permiten cambiar el fondo
+        ImageIcon click_Aqui = new ImageIcon("boton2.png");
+        boton2.setIcon(new ImageIcon(click_Aqui.getImage().getScaledInstance(boton2.getWidth(), boton2.getHeight(), Image.SCALE_SMOOTH)));
+        //boton2.setBackground(Color.BLUE);  //Establecemos el color de fondo
+
+        panel.add(boton2);
     }
 }
