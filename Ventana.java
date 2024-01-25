@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
@@ -34,14 +35,15 @@ public class Ventana extends JFrame {
         //colocarBotones();
         //colocarRadioBotones();
         //colocarBotonesDeActivacion();
-        colocarCajasDeTexto();
+        //colocarCajasDeTexto();
+        colocarAreasDeTexto();
         
     }
     private void colocarPaneles(){
         panel = new JPanel();  //Creamos el panel
         panel.setBackground(Color.BLACK);
         this.getContentPane().add(panel);  //Agregamos el panel
-        //panel.setLayout(null);  //Desactivamos el diseño por defecto
+        panel.setLayout(null);  //Desactivamos el diseño por defecto
     }
     private void colocarEtiquetas(){
         //Etiqueta 1 - etiqueta tipo texto
@@ -156,9 +158,21 @@ public class Ventana extends JFrame {
         grupo_Botones_Act.add(boton_Act_3);
     }
     private void colocarCajasDeTexto(){
-        JTextField caja_Texto_1 = new JTextField("Hola", 20);
-        //caja_Texto_1.setBounds(50, 50, 120, 30);
-        //caja_Texto_1.setText("Ingrese datos...");
+        JTextField caja_Texto_1 = new JTextField("Hola", 50);
+        caja_Texto_1.setBounds(50, 50, 120, 30);
+        caja_Texto_1.setText("Ingrese datos...");
+
+        System.out.println("Texto en la caja: "+caja_Texto_1.getText());
         panel.add(caja_Texto_1);
+    }
+    private void colocarAreasDeTexto(){
+        JTextArea area_Texto_1 = new JTextArea();
+        area_Texto_1.setBounds(20, 20, 300, 200);
+        area_Texto_1.setText("Escriba el texto aquí...");
+        area_Texto_1.append("\nAñadiendo texto");
+        area_Texto_1.setEditable(true);  //Editar contenido que ya se tiene
+        
+        System.out.println("El texto es: "+area_Texto_1.getText());
+        panel.add(area_Texto_1);
     }
 }
