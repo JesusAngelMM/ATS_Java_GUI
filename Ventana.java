@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
 
 public class Ventana extends JFrame {
@@ -30,7 +31,8 @@ public class Ventana extends JFrame {
         colocarPaneles();
         //colocarEtiquetas();
         //colocarBotones();
-        colocarRadioBotones();
+        //colocarRadioBotones();
+        colocarBotonesDeActivacion();
         
     }
     private void colocarPaneles(){
@@ -126,5 +128,29 @@ public class Ventana extends JFrame {
         grupo_Radio_Botones.add(radio_Boton2);
         grupo_Radio_Botones.add(radio_Boton3);
 
+    }
+    private void colocarBotonesDeActivacion(){
+        JToggleButton boton_Act_1 = new JToggleButton();
+        boton_Act_1.setText("Opcion 1");
+        boton_Act_1.setEnabled(true);
+        boton_Act_1.setBounds(50, 100, 100, 30);
+        panel.add(boton_Act_1);
+
+        JToggleButton boton_Act_2 = new JToggleButton();
+        boton_Act_2.setText("Opcion 2");
+        boton_Act_2.setEnabled(true);
+        boton_Act_2.setBounds(50, 150, 100, 30);
+        panel.add(boton_Act_2);
+
+        JToggleButton boton_Act_3 = new JToggleButton();
+        boton_Act_3.setText("Opcion 3");
+        boton_Act_3.setEnabled(true);
+        boton_Act_3.setBounds(50, 200, 100, 30);
+        panel.add(boton_Act_3);
+
+        ButtonGroup grupo_Botones_Act = new ButtonGroup();
+        grupo_Botones_Act.add(boton_Act_1);
+        grupo_Botones_Act.add(boton_Act_2);
+        grupo_Botones_Act.add(boton_Act_3);
     }
 }
