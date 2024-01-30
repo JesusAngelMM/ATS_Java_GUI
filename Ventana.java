@@ -6,6 +6,7 @@ import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -38,7 +39,8 @@ public class Ventana extends JFrame {
         //colocarRadioBotones();
         //colocarBotonesDeActivacion();
         //colocarCajasDeTexto();
-        colocarAreasDeTexto();
+        //colocarAreasDeTexto();
+        colocarCasillasDeVerificacion();
         
     }
     private void colocarPaneles(){
@@ -181,5 +183,24 @@ public class Ventana extends JFrame {
         JScrollPane barras_Desplazamiento = new JScrollPane(area_Texto_1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         barras_Desplazamiento.setBounds(20, 20, 300, 200);
         panel.add(barras_Desplazamiento);
+    }
+    private void colocarCasillasDeVerificacion(){
+        JCheckBox casilla_verificacion_1 = new JCheckBox("Leche", true);
+        casilla_verificacion_1.setEnabled(false);
+        casilla_verificacion_1.setBounds(20, 20, 100, 40);
+        panel.add(casilla_verificacion_1);
+
+        JCheckBox casilla_verificacion_2 = new JCheckBox("Galletas");
+        casilla_verificacion_2.setBounds(20, 50, 100, 40);
+        panel.add(casilla_verificacion_2);
+
+        JCheckBox casilla_verificacion_3 = new JCheckBox("Yogurt");
+        casilla_verificacion_3.setBounds(20, 80, 100, 40);
+        panel.add(casilla_verificacion_3);
+
+        JCheckBox casilla_verificacion_4 = new JCheckBox("Cereal");
+        casilla_verificacion_4.setBounds(20, 110, 100, 40);
+        panel.add(casilla_verificacion_4);
+
     }
 }
