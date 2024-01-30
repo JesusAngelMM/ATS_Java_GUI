@@ -7,6 +7,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -40,7 +41,8 @@ public class Ventana extends JFrame {
         //colocarBotonesDeActivacion();
         //colocarCajasDeTexto();
         //colocarAreasDeTexto();
-        colocarCasillasDeVerificacion();
+        //colocarCasillasDeVerificacion();
+        colocarListasDesplegables();
         
     }
     private void colocarPaneles(){
@@ -203,4 +205,14 @@ public class Ventana extends JFrame {
         panel.add(casilla_verificacion_4);
 
     }
+    private void colocarListasDesplegables(){
+        String[] paises = {"Peru", "Colombia", "Paraguay", "Ecuador"};
+
+        JComboBox lista_Desplegable = new JComboBox(paises);
+        lista_Desplegable.setBounds(20, 20, 100, 30);
+        lista_Desplegable.addItem("Argentina");
+        lista_Desplegable.setSelectedItem("Paraguay");
+        panel.add(lista_Desplegable);
+    }
+
 }
