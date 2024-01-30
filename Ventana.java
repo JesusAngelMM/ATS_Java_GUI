@@ -10,9 +10,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 
 public class Ventana extends JFrame {
@@ -174,5 +176,10 @@ public class Ventana extends JFrame {
         
         System.out.println("El texto es: "+area_Texto_1.getText());
         panel.add(area_Texto_1);
+
+        //Barras de desplazamiento
+        JScrollPane barras_Desplazamiento = new JScrollPane(area_Texto_1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        barras_Desplazamiento.setBounds(20, 20, 300, 200);
+        panel.add(barras_Desplazamiento);
     }
 }
