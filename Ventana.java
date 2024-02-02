@@ -12,6 +12,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -43,7 +44,8 @@ public class Ventana extends JFrame {
         //colocarCajasDeTexto();
         //colocarAreasDeTexto();
         //colocarCasillasDeVerificacion();
-        colocarListasDesplegables();
+        //colocarListasDesplegables();
+        colocarCampoDeContrasena();
         
     }
     private void colocarPaneles(){
@@ -227,6 +229,18 @@ public class Ventana extends JFrame {
 
         modelo.addElement(persona1);
         modelo.addElement(persona2);
+    }
+    private void colocarCampoDeContrasena(){
+        JPasswordField campo_contrasena = new JPasswordField();
+        campo_contrasena.setBounds(20, 20, 150, 30);
+        campo_contrasena.setText("Hola");
+        panel.add(campo_contrasena);
+
+        String contrasena = "";
+        for (char e : campo_contrasena.getPassword()) {
+            contrasena += e;
+        }
+        System.out.println("Contraseña: " + contrasena);
     }
 
 }
