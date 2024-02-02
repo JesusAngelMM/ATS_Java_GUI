@@ -15,11 +15,13 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 
 public class Ventana extends JFrame {
 
@@ -45,7 +47,8 @@ public class Ventana extends JFrame {
         //colocarAreasDeTexto();
         //colocarCasillasDeVerificacion();
         //colocarListasDesplegables();
-        colocarCampoDeContrasena();
+        //colocarCampoDeContrasena();
+        colocarTablas();
         
     }
     private void colocarPaneles(){
@@ -241,6 +244,61 @@ public class Ventana extends JFrame {
             contrasena += e;
         }
         System.out.println("Contraseña: " + contrasena);
+    }
+    private void colocarTablas(){
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Edad");
+        modelo.addColumn("Nacionalidad");
+
+        String[] persona1 = {"Angel", "20", "Mexicano"};
+        modelo.addRow(persona1);
+        String[] persona2 = {"Jenny", "19", "Gringa"};
+        modelo.addRow(persona2);
+        String[] persona3 = {"Leonel", "34", "Argentina"};
+        modelo.addRow(persona3);
+        String[] persona4 = {"Maria", "25", "Española"};
+        modelo.addRow(persona4);
+        String[] persona5 = {"John", "28", "Canadiense"};
+        modelo.addRow(persona5);
+        String[] persona6 = {"Emily", "22", "Australiana"};
+        modelo.addRow(persona6);
+        String[] persona7 = {"Carlos", "30", "Colombiano"};
+        modelo.addRow(persona7);
+        String[] persona8 = {"Sara", "27", "Italiana"};
+        modelo.addRow(persona8);
+        String[] persona9 = {"Daniel", "23", "Brasileño"};
+        modelo.addRow(persona9);
+        String[] persona10 = {"Sophie", "26", "Francesa"};
+        modelo.addRow(persona10);
+        String[] persona11 = {"Alex", "31", "Inglés"};
+        modelo.addRow(persona11);
+        String[] persona12 = {"Elena", "29", "Rusa"};
+        modelo.addRow(persona12);
+        String[] persona13 = {"Pablo", "32", "Chileno"};
+        modelo.addRow(persona13);
+        String[] persona14 = {"Isabella", "24", "Alemana"};
+        modelo.addRow(persona14);
+        String[] persona15 = {"Gabriel", "33", "Uruguayo"};
+        modelo.addRow(persona15);
+        String[] persona16 = {"Olivia", "21", "Estadounidense"};
+        modelo.addRow(persona16);
+        String[] persona17 = {"Mateo", "35", "Mexicano"};
+        modelo.addRow(persona17);
+        String[] persona18 = {"Lily", "18", "Canadiense"};
+        modelo.addRow(persona18);
+        String[] persona19 = {"Diego", "36", "Argentino"};
+        modelo.addRow(persona19);
+        String[] persona20 = {"Emma", "19", "Australiana"};
+        modelo.addRow(persona20);
+
+        JTable tabla = new JTable(modelo);
+        tabla.setBounds(20, 20, 300, 200);
+        panel.add(tabla);
+
+        JScrollPane scroll = new JScrollPane(tabla, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scroll.setBounds(20, 20, 300, 200);
+        panel.add(scroll);
     }
 
 }
