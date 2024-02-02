@@ -5,12 +5,14 @@ import java.awt.Image;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
@@ -48,7 +50,8 @@ public class Ventana extends JFrame {
         //colocarCasillasDeVerificacion();
         //colocarListasDesplegables();
         //colocarCampoDeContrasena();
-        colocarTablas();
+        //colocarTablas();
+        colocarListas();
         
     }
     private void colocarPaneles(){
@@ -300,5 +303,46 @@ public class Ventana extends JFrame {
         scroll.setBounds(20, 20, 300, 200);
         panel.add(scroll);
     }
+    private void colocarListas(){
+        DefaultListModel modelo = new DefaultListModel();
 
+        modelo.addElement(new Persona("Angel", 19, "Mexicano"));
+        modelo.addElement(new Persona("Jenny", 25, "Estadounidense"));
+        modelo.addElement(new Persona("Leonel", 30, "Argentino"));
+        modelo.addElement(new Persona("Maria", 22, "Española"));
+        modelo.addElement(new Persona("John", 28, "Canadiense"));
+        modelo.addElement(new Persona("Emily", 21, "Australiana"));
+        modelo.addElement(new Persona("Carlos", 33, "Colombiano"));
+        modelo.addElement(new Persona("Sara", 26, "Italiana"));
+        modelo.addElement(new Persona("Daniel", 29, "Brasileño"));
+        modelo.addElement(new Persona("Sophie", 24, "Francesa"));
+        modelo.addElement(new Persona("Alex", 32, "Inglés"));
+        modelo.addElement(new Persona("Elena", 27, "Rusa"));
+        modelo.addElement(new Persona("Pablo", 34, "Chileno"));
+        modelo.addElement(new Persona("Isabella", 23, "Alemana"));
+        modelo.addElement(new Persona("Gabriel", 31, "Uruguayo"));
+        modelo.addElement(new Persona("Olivia", 20, "Estadounidense"));
+        modelo.addElement(new Persona("Mateo", 35, "Mexicano"));
+        modelo.addElement(new Persona("Lily", 18, "Canadiense"));
+        modelo.addElement(new Persona("Diego", 36, "Argentino"));
+        modelo.addElement(new Persona("Emma", 19, "Australiana"));
+        modelo.addElement(new Persona("Luis", 40, "Mexicano"));
+        modelo.addElement(new Persona("Anna", 29, "Sueca"));
+        modelo.addElement(new Persona("Miguel", 26, "Colombiano"));
+        modelo.addElement(new Persona("Sophia", 22, "Estadounidense"));
+        modelo.addElement(new Persona("Antonio", 38, "Español"));
+        modelo.addElement(new Persona("Eva", 27, "Mexicana"));
+        modelo.addElement(new Persona("Lucas", 33, "Brasileño"));
+        modelo.addElement(new Persona("Amelia", 25, "Francesa"));
+        modelo.addElement(new Persona("Julian", 30, "Colombiano"));
+
+        JList lista = new JList(modelo);
+        lista.setBounds(20, 20, 200, 300);
+        panel.add(lista);
+
+        JScrollPane scroll = new JScrollPane(lista, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scroll.setBounds(20, 20, 200, 300);
+        panel.add(scroll);
+        
+    }
 }
