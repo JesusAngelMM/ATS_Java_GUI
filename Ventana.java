@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.Image;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -206,13 +207,26 @@ public class Ventana extends JFrame {
 
     }
     private void colocarListasDesplegables(){
-        String[] paises = {"Peru", "Colombia", "Paraguay", "Ecuador"};
+        /*String[] paises = {"Peru", "Colombia", "Paraguay", "Ecuador"};
 
         JComboBox lista_Desplegable = new JComboBox(paises);
         lista_Desplegable.setBounds(20, 20, 100, 30);
         lista_Desplegable.addItem("Argentina");
         lista_Desplegable.setSelectedItem("Paraguay");
         panel.add(lista_Desplegable);
+        */
+    
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel<>();
+        JComboBox lista_desplegable = new JComboBox(modelo);
+
+        lista_desplegable.setBounds(20, 20, 200, 30);
+        panel.add(lista_desplegable);
+
+        Persona persona1 = new Persona("Angel Martinez", 19, "Mexicano");
+        Persona persona2 = new Persona("Tania Velasco", 29, "Argentina");
+
+        modelo.addElement(persona1);
+        modelo.addElement(persona2);
     }
 
 }
