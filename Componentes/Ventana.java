@@ -343,6 +343,5 @@ public class Ventana extends JFrame {
         JScrollPane scroll = new JScrollPane(lista, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         scroll.setBounds(20, 20, 200, 300);
         panel.add(scroll);
-        
     }
 }
