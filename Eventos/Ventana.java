@@ -86,30 +86,47 @@ public class Ventana extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) { //
                 //Eliminamos lo que hay dentro de los métodos
-                areaTexto.append("Mouse Clicked | A dado click y soltado dentro\n");
+                if(e.isAltDown()){
+                    areaTexto.append("ALT\n");
+                }
+                else if(e.isControlDown()){
+                    areaTexto.append("CONTROL\n");
+                }
+                else if(e.isShiftDown()){
+                    areaTexto.append("SHIFT\n");
+                }
+                else if(e.isMetaDown()){
+                    areaTexto.append("Click Derecho\n");
+                }
+                else{
+                    areaTexto.append("Click Izquierdo\n");
+                }
+                if(e.getClickCount() == 2){
+                    areaTexto.append("Doble Click\n");
+                }
             }
 
             @Override
             public void mousePressed(MouseEvent e) {
                 //Eliminamos lo que hay dentro de los métodos
-                areaTexto.append("Mouse Pressed - A dado click\n");
+                //areaTexto.append("Mouse Pressed - A dado click\n");
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
                 //Eliminamos lo que hay dentro de los métodos
-                areaTexto.append("Mouse Released - A dado click y soltado fuera\n");
+                //areaTexto.append("Mouse Released - A dado click y soltado fuera\n");
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
                 //Eliminamos lo que hay dentro de los métodos
-                areaTexto.append("Mouse Entered | Esta dentro del area\n");
+                //areaTexto.append("Mouse Entered | Esta dentro del area\n");
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                areaTexto.append("Mouse Exit | A salido del area\n");
+                //areaTexto.append("Mouse Exit | A salido del area\n");
             }
         };
 
