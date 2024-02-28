@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -44,7 +46,8 @@ public class Ventana extends JFrame{
         panel.setLayout(null);
         this.add(panel);
 
-        eventoDeMovimientoRaton();
+        //eventoDeMovimientoRaton();
+        eventoDeRuedaDelRaton();
     }
     private void colocarEtiqueta(){
         JLabel etiqueta = new JLabel("Ingrese su nombre: ");
@@ -158,5 +161,21 @@ public class Ventana extends JFrame{
             
         };
         panel.addMouseMotionListener(oyenteMoviientoRaton);
+    }
+    private void eventoDeRuedaDelRaton(){
+        MouseWheelListener ruedaRaton = new MouseWheelListener() {
+
+            @Override
+            public void mouseWheelMoved(MouseWheelEvent e) {
+                if(e.getPreciseWheelRotation() == -1){
+                    areaTexto.append("Rueda hacia arriba\n");
+                }
+                if(e.getPreciseWheelRotation() == 1){
+                    areaTexto.append("Rueda hacia abajo\n");
+                }
+            }
+            
+        };
+        panel.addMouseWheelListener(ruedaRaton);
     }
 }
