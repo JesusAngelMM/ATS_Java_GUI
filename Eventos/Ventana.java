@@ -4,12 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 
 public class Ventana extends JFrame{
     private JPanel panel;
@@ -33,11 +37,14 @@ public class Ventana extends JFrame{
         //colocarCajaDeTexto();
         colocarAreaTexto();
         colocarBoton();
+
     }
     private void colocarPanel(){
         panel = new JPanel();
         panel.setLayout(null);
         this.add(panel);
+
+        eventoDeMovimientoRaton();
     }
     private void colocarEtiqueta(){
         JLabel etiqueta = new JLabel("Ingrese su nombre: ");
@@ -54,6 +61,10 @@ public class Ventana extends JFrame{
         areaTexto = new JTextArea();
         areaTexto.setBounds(20, 20, 200, 300);
         panel.add(areaTexto);
+
+        JScrollPane scroll = new JScrollPane(areaTexto, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scroll.setBounds(20, 20, 200, 300);
+        panel.add(scroll);
     }
     private void colocarBoton(){
         boton = new JButton("¡Pulsa  aqui!");
@@ -67,7 +78,7 @@ public class Ventana extends JFrame{
         panel.add(saludo);
 
         //eventoOyenteDeAccion();
-        eventoOyenteDeRaton();
+        //eventoOyenteDeRaton();
     }
     public void eventoOyenteDeAccion(){
         //Agregar un Evento de tipo ActionListener
@@ -132,5 +143,20 @@ public class Ventana extends JFrame{
 
         
         boton.addMouseListener(oyenteDeRaton);  //Sobre el botón se va a generar el evento
+    }
+    public void eventoDeMovimientoRaton(){
+        MouseMotionListener oyenteMoviientoRaton = new MouseMotionListener() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                areaTexto.append("MouseDagged\n");
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                areaTexto.append("MouseMoved\n");
+            }
+            
+        };
+        panel.addMouseMotionListener(oyenteMoviientoRaton);
     }
 }
